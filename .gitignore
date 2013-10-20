@@ -1,0 +1,12 @@
+
+# Ignore editing backups
+*.swp
+*~
+
+
+# Ignore temp directories
+tmp/
+vendor/
+var/log/
+
+
