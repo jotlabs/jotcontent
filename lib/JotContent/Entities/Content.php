@@ -8,7 +8,7 @@ class Content extends Entity {
 
     static $models = array(
         'content' => array(
-            'getBySlug' => 'SELECT * FROM `content` WHERE slug = :slug LIMIT 0,1;'
+            self::SQL_GET_BY_SLUG => 'SELECT * FROM `content` WHERE slug = :slug LIMIT 0,1;'
         ),
 
         'content_models' => array(
@@ -16,10 +16,10 @@ class Content extends Entity {
         )
     );
 
+
     public function getContentBySlug($slug, $hydrate=false) {
         $content = $this->dataSource->findOne(
-                        'content',
-                        'getBySlug',
+                        'content', self::SQL_GET_BY_SLUG,
                         'JotContent\Models\Content',
                         array('slug' => $slug)
                     );
