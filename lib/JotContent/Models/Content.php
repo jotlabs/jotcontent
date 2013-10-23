@@ -16,6 +16,7 @@ class Content extends Model {
     public      $slug;
     public      $title;
     public      $summary;
+    public      $thumbnail;
 
     // Content metadata
     public      $contentType;
