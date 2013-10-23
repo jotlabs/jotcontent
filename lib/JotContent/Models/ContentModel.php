@@ -4,7 +4,7 @@ namespace JotContent\Models;
 
 use JotContent\Model;
 
-class ContentType extends Model {
+class ContentModel extends Model {
     
     protected   $_id;
     public      $entity;

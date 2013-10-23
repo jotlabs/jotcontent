@@ -11,8 +11,8 @@ class Content extends Entity {
             'getBySlug' => 'SELECT * FROM `content` WHERE slug = :slug LIMIT 0,1;'
         ),
 
-        'content_types' => array(
-            'getById' => 'SELECT * from `content_types` WHERE _id = :typeId LIMIT 0,1;'
+        'content_models' => array(
+            self::SQL_GET_BY_ID => 'SELECT * from `content_models` WHERE _id = :typeId LIMIT 0,1;'
         )
     );
 
@@ -33,21 +33,20 @@ class Content extends Entity {
 
 
     public function hydrateContent($content) {
-        //$contentType = $this->getContentTypeById($content->getContentTypeId());
+        //$contentModel = $this->getContentModelById($content->getContentModelId());
 
         return $content;
     }
 
 
-    public function getContentTypeById($contentTypeId) {
-        $contentType = $this->dataSource->findOne(
-                            'content_types',
-                            'getById',
-                            'JotContent\Models\ContentType',
-                            array('typeId' => $contentTypeId)
+    public function getContentModelById($contentModelId) {
+        $contentModel = $this->dataSource->findOne(
+                            'content_models', self::SQL_GET_BY_ID,
+                            'JotContent\Models\ContentModel',
+                            array('modelId' => $contentModelId)
                         );
 
-        return $contentType;
+        return $contentModel;
     }
 
 }
