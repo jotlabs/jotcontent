@@ -20,7 +20,6 @@ class TagTest extends PHPUnit_Framework_TestCase {
         $this->assertTrue(property_exists($this->tag, 'description'));
         $this->assertTrue(property_exists($this->tag, 'dateCreated'));
         $this->assertTrue(property_exists($this->tag, 'dateAdded'));
-        $this->assertTrue(property_exists($this->tag, 'dateAdded'));
         $this->assertTrue(property_exists($this->tag, '_items'));
     }
 
