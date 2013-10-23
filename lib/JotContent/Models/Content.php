@@ -22,8 +22,7 @@ class Content extends Model {
     public      $contentType;
     public      $dateAdded;
     public      $lastUpdated;
-    // TODO: rename active to content_status
-    public      $active;
+    public      $status;
 
     public function getContentModelId() {
         return $this->_content_model_id;
