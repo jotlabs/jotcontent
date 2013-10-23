@@ -6,6 +6,7 @@ use JotContent\Model;
 
 class Content extends Model {
 
+    // content envelope reference
     protected   $_id;
 
     // Content model type properties
