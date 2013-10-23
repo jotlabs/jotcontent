@@ -21,6 +21,11 @@ interface ApplicationModelConstants {
     const ENTITY_USERS      = 'users';
     const ENTITY_TAGS       = 'tags';
     const ENTITY_CATEGORIES = 'categories';
+
+
+    // Statement constructs
+    const SQL_GET_BY_SLUG   = 'getBySlug';
+    const SQL_GET_BY_ID     = 'getById';
 }
 
 ?>
