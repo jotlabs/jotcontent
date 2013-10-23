@@ -17,6 +17,8 @@ class Content extends Model {
     public      $title;
     public      $summary;
 
+    // Content metadata
+    public      $contentType;
     public      $dateAdded;
     public      $lastUpdated;
     // TODO: rename active to content_status
