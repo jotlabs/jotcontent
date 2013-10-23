@@ -25,6 +25,14 @@ class UserTest extends PHPUnit_Framework_TestCase {
         $this->assertTrue(property_exists($this->user, '_roles'));
     }
 
+    public function testSessions() {
+        $this->assertTrue(is_array($this->user->getSessions()));
+        $this->assertEquals(0, count($this->user->getSessions()));
+
+        $this->user->addSessions((object)array('name' => 'testSession'));
+        $this->assertEquals(1, count($this->user->getSessions()));
+    }
+
 
 }
 
