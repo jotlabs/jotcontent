@@ -1,5 +1,6 @@
 <?php
 
+use JotContent\Testing\UnitTestUtils;
 use JotContent\Entities\Users;
 
 class UsersTest extends PHPUnit_Framework_TestCase {

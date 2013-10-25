@@ -1,6 +1,6 @@
 <?php
 
-use JotContent\DataSources\PdoDataSource;
+use JotContent\Testing\UnitTestUtils;
 use JotContent\Entities\Tags;
 
 class TagsTest extends PHPUnit_Framework_TestCase {
