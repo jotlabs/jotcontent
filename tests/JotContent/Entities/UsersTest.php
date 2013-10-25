@@ -5,10 +5,9 @@ use JotContent\Entities\Users;
 
 class UsersTest extends PHPUnit_Framework_TestCase {
     protected $users;
-    protected $dsn = 'sqlite:{DB_PATH}entity-users.db';
 
     public function setUp() {
-        $dsn = preg_replace('/\{DB_PATH\}/', UNITTEST_DB_PATH, $this->dsn);
+        $dsn = UnitTestUtils::getDatasource('users');
         $this->users = Users::getInstance();
         $this->users->setDataSource(new PdoDataSource($dsn));
     }
