@@ -5,10 +5,9 @@ use JotContent\Entities\Tags;
 
 class TagsTest extends PHPUnit_Framework_TestCase {
     protected $tags;
-    protected $dsn = 'sqlite:{DB_PATH}entity-videos.db';
 
     public function setUp() {
-        $dsn = preg_replace('/\{DB_PATH\}/', UNITTEST_DB_PATH, $this->dsn);
+        $dsn = UnitTestUtils::getDatasource('videos');
         $this->tags = Tags::getInstance();
         $this->tags->setDataSource(new PdoDataSource($dsn));
     }
