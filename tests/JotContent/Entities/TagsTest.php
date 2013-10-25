@@ -7,9 +7,9 @@ class TagsTest extends PHPUnit_Framework_TestCase {
     protected $tags;
 
     public function setUp() {
-        $dsn = UnitTestUtils::getDatasource('videos');
+        $dataSource = UnitTestUtils::getDatasource('videos');
         $this->tags = Tags::getInstance();
-        $this->tags->setDataSource(new PdoDataSource($dsn));
+        $this->tags->setDataSource($dataSource);
     }
 
     public function testClassExists() {

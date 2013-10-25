@@ -1,15 +1,14 @@
 <?php
 
-use JotContent\DataSources\PdoDataSource;
 use JotContent\Entities\Users;
 
 class UsersTest extends PHPUnit_Framework_TestCase {
     protected $users;
 
     public function setUp() {
-        $dsn = UnitTestUtils::getDatasource('users');
+        $dataSource = UnitTestUtils::getDatasource('users');
         $this->users = Users::getInstance();
-        $this->users->setDataSource(new PdoDataSource($dsn));
+        $this->users->setDataSource($dataSource);
     }
 
     public function testClassExists() {
