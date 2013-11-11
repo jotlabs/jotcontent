@@ -18,7 +18,7 @@ class FormattingTest extends PHPUnit_Framework_TestCase {
 
     public function testIsoFormattedDate() {
         $dates = array(
-            array('2013-09-05 07:34:00', '2013-09-05T07:34:00+01:00'),
+            array('2013-09-05 07:34:00', '2013-09-05T07:34:00+00:00'),
             array('2000-02-29 08:30:37', '2000-02-29T08:30:37+00:00')
         );
 
