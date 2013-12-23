@@ -62,6 +62,13 @@ class EntityFactory {
         }
     }
 
+    
+    public function setDataSources($dataSources) {
+        foreach($dataSources as $dsName => $dsSpec) {
+            $this->addDataSource($dsName, $dsSpec);
+        }
+    }
+
 
     public function getDataSource($dsName) {
         $dataSource = NULL;
@@ -86,8 +93,10 @@ class EntityFactory {
         if (is_string($entitySpec)) {
             // Just the classname: getInstance and assign default datasource
             $entity = $entitySpec::getInstance();
+
             $dataSource = $this->getDataSource(self::DEFAULT_DATASOURCE);
             $entity->setDataSource($dataSource);
+
         } elseif (is_array($entitySpec)) {
             // Entity + datasource: getInstance and assign requested datasource
             $entityName = $entitySpec['class'];
@@ -104,8 +113,10 @@ class EntityFactory {
         } elseif (is_a($entitySpec, 'JotContent\Entity')) {
             // Entity instance, just use it
             $entity = $entitySpec;
+
         } else {
             echo "Don't understand Entity spec: "; print_r($entitySpec);
+
         }
 
         return $entity;
